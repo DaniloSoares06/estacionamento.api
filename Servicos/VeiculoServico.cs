@@ -126,7 +126,7 @@ namespace Estacionamento.API.Servicos
 		}
 		public IList<ObterVeiculosNoPatioEspecificoDto> ObterTodosOsVeiculosNoPatioEspecifico(int patioId)
 		{
-			var veiculosNoPatio = _estacionamentoContexto.VeiculoPatios.Where(p => p.PatioId == patioId && p.Ativo == false).ToList();
+			var veiculosNoPatio = _estacionamentoContexto.VeiculoPatios.Where(p => p.PatioId == patioId && p.Ativo == true).ToList();
 			foreach (var v in veiculosNoPatio)
 			{
 				CalcularValorParaSerCobrado(v.Veiculo.Placa);
